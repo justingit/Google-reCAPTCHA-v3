@@ -3,7 +3,6 @@ package Google::reCAPTCHA::v3;
 use warnings; 
 use strict;
 
-
 use Carp qw(croak carp);
 use Try::Tiny;
 use LWP; 
@@ -60,8 +59,8 @@ sub _init {
     my $self = shift;
     my ($args) = @_;
 	
-	if(exists($args->{secret})){ 
-		$self->secret($args->{secret}); 
+	if(exists($args->{-secret})){ 
+		$self->secret($args->{-secret}); 
 	}
 	else {
 		carp "You'll need to pass the Google reCAPTCHA v3 secret key to new()";
@@ -88,7 +87,10 @@ sub request {
 	if(exists($args->{-remoteip})){ 
     	$req_params->{remoteip} = $args->{-remoteip}; 
 	}
-	
+	if(defined($self->secret)){ 
+		warn '$self->secret: ' . $self->secret;
+		$req_params->{secret} = $self->secret; 
+	}
 	my $req = POST $self->request_url(), [%{$req_params}];
 	
 	#return $ua->request($req)->as_string;
