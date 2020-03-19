@@ -88,7 +88,6 @@ sub request {
     	$req_params->{remoteip} = $args->{-remoteip}; 
 	}
 	if(defined($self->secret)){ 
-		warn '$self->secret: ' . $self->secret;
 		$req_params->{secret} = $self->secret; 
 	}
 	my $req = POST $self->request_url(), [%{$req_params}];
@@ -104,9 +103,6 @@ sub request {
 	#$decoded_json
 	
 }
-	
 
-# response 	Required. The user response token provided by the reCAPTCHA client-side integration on your site.
-# remoteip 	Optional. The user's IP address.
 	
 1;
