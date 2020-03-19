@@ -1,6 +1,6 @@
 package Google::reCAPTCHA::v3;
 
-my $VERSION = '0.1.0';
+our $VERSION = '0.1.0';
 use warnings; 
 use strict;
 
