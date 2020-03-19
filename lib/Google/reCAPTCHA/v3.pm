@@ -72,7 +72,6 @@ sub request {
 	my $self = shift; 
 	my ($args) = @_; 
 	
-	
 	my $ua = LWP::UserAgent->new;
 	
 	if(!exists($args->{-response})){ 
@@ -91,16 +90,12 @@ sub request {
 		$req_params->{secret} = $self->secret; 
 	}
 	my $req = POST $self->request_url(), [%{$req_params}];
-	
-	#return $ua->request($req)->as_string;
-	
+		
 	my $json = JSON->new->allow_nonref;
 	
 	return $json->decode(
 		$ua->request($req)->decoded_content
 	);
-	
-	#$decoded_json
 	
 }
 
