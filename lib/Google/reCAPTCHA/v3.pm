@@ -13,7 +13,6 @@ use vars qw($AUTOLOAD);
 my %allowed = ( 
 	request_url => 'https://www.google.com/recaptcha/api/siteverify',
 	secret      => undef, 
-	test        => 0, 
 );
 
 sub new {
@@ -38,11 +37,9 @@ sub AUTOLOAD {
     my $self = shift;
     my $type = ref($self)
       or croak "$self is not an object";
-
-    # return if(substr($AUTOLOAD, -7) eq 'DESTROY');
-
+	  
     my $name = $AUTOLOAD;
-    $name =~ s/.*://;    #strip fully qualifies portion
+       $name =~ s/.*://;    #strip fully qualifies portion
 
     unless ( exists $self->{_permitted}->{$name} ) {
         croak "Can't access '$name' field in object of class $type";
@@ -95,8 +92,7 @@ sub request {
 	
 	return $json->decode(
 		$ua->request($req)->decoded_content
-	);
-	
+	);	
 }
 
 	
