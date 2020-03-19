@@ -109,13 +109,13 @@ Google::reCAPTCHA::v3 - A simple Perl API for Google reCAPTCHA v3
 
 =head1 SYNOPSIS
 
-    use Google::reCAPTCHA::v3;
+	use Google::reCAPTCHA::v3;
 
 	my $grc = Google::reCAPTCHA::v3->new(
-        {
-            -secret => 'Google reCAPTCHA v3 site secret key',
-        }
-    );
+		{
+			-secret => 'Google reCAPTCHA v3 site secret key',
+		}
+	);
 
 	my $r = $grc->request(
 		{ 
@@ -136,10 +136,10 @@ See: L<https://developers.google.com/recaptcha/docs/verify>.
 =head2 new
 
 	my $grc = Google::reCAPTCHA::v3->new(
-        {
-            -secret => 'Google reCAPTCHA v3 site secret key',
-        }
-    );
+		{
+			-secret => 'Google reCAPTCHA v3 site secret key',
+		}
+	);
 
 Requires one paramater, C<-secret>, which should be your Google reCAPTCHA v3 site secret key. 
 Returns a new Google::reAPTCHA::v3 object. 
