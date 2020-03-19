@@ -4,7 +4,6 @@ use warnings;
 use strict;
 
 use Carp qw(croak carp);
-use Try::Tiny;
 use LWP; 
 use HTTP::Request::Common qw(POST);
 use JSON qw( decode_json );
