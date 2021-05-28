@@ -95,6 +95,8 @@ sub request {
 	);	
 }
 
+sub DESTROY {}
+
 1;
 
 __END__
