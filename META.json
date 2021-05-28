@@ -4,13 +4,13 @@
       "Justin Simoni"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.1.9, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.1.12, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-      "version" : "2"
+      "version" : 2
    },
    "name" : "Google-reCAPTCHA-v3",
    "no_index" : {
@@ -71,6 +71,6 @@
    "x_contributors" : [
       "justingit <perl@justinsimoni.com>"
    ],
-   "x_serialization_backend" : "JSON::PP version 2.27300",
+   "x_serialization_backend" : "JSON::PP version 4.05",
    "x_static_install" : 1
 }
